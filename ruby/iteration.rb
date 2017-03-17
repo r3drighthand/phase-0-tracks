@@ -19,7 +19,7 @@ data structures before and after each call to demonstrate
 whether they have been modified or not.
 =end 
 
-# RELEASE 1: ARRAY .EACH
+# RELEASE 1: ARRAY.EACH
 sbux_coffee = ["italian", "sumatra", "french", "verona", "komodo", "espresso", "gold coast"]
 sbux_coffee_capitalize = []
 
@@ -32,8 +32,15 @@ end
 puts "Varieties of dark roasts available at Starbucks include:"
 p sbux_coffee_capitalize
 
+# RELEASE 1: ARRAY.MAP!
 
-# RELEASE 1: ARRAY .MAP
+p sbux_coffee 
+
+sbux_coffee.map! do |coffee|
+    coffee.upcase
+end 
+
+p sbux_coffee
 
 
 
