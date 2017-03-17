@@ -8,7 +8,8 @@ Those variables should be the values of a key/value pair in an empty hash.
 Add client data to empty hash with each entry.
 Print hash to console.
 Prompt user to correct any incorrect info, or type 'done'.
-Set up one-time loop to store user input, or exit program if user types 'done'.
+Set up one-time loop (if/elsif/else) to store user input, or exit program if 
+	user types 'done'.
 Print updated hash.
 
 =end 
@@ -47,29 +48,30 @@ puts client_data
 
 puts ""
 puts "Are there any changes you would like to make to the information 
-entered above? Please specify where by typing: 'name', 'age', 'children', 
-'decor', or 'none' if there are no changes."
+entered above? Please specify where by typing: 'full_name', 'age', 'children', 
+'decor_theme', or 'none' if there are no changes."
 
 
-edit_info = gets.chomp
-    if edit_info == "none"
+edit_data = gets.chomp
+    if edit_data == "none"
         puts "Thank you."
-    elsif "name"
+    elsif "full_name"
         puts "Please enter the correct information:"
-        client_data[edit_info] = gets.chomp
+        client_data[edit_data] = gets.chomp
     elsif "age"
         puts "Please enter the correct information:"
-        client_data[edit_info] = gets.chomp
+        client_data[edit_data] = gets.chomp
     elsif "number of children"
         puts "Please enter the correct information:"
-        client_data[edit_info] = gets.chomp
+        client_data[edit_data] = gets.chomp
     else "decor theme"
         puts "Please enter the correct information:"
-        client_data[edit_info] = gets.chomp
+        client_data[edit_data] = gets.chomp
     end 
 
 puts " "
-puts "Thank you."
+puts "Thank you for filling out our form!"
+puts "Have a great day!"
 puts " "
 
-client_information
+client_data
