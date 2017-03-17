@@ -36,9 +36,39 @@ puts "Decor theme:"
 decor_theme = gets.chomp
 client_information["decor_theme"] = decor_theme
 
-p client_information
+puts " "
+puts client_information
 
-# p "Name: #{full_name}"
-# p "Age: #{age}"
-# p "Number of children: #{number_of_children}"
-# p "Decor theme: #{decor_theme}"
+"Name: #{full_name}"
+"Age: #{age}"
+"Number of children: #{number_of_children}"
+"Decor theme: #{decor_theme}"
+
+puts ""
+puts "Are there any changes you would like to make to the information 
+entered above? Please specify where by typing: 'name', 'age', 'number o
+f children', 'decor theme', or 'none' if there are no changes."
+
+
+edit_info = gets.chomp
+    if edit_info == "none"
+        puts "Thank you."
+    elsif "name"
+        puts "Please enter the correct information:"
+        client_information[edit_info] = gets.chomp
+    elsif "age"
+        puts "Please enter the correct information:"
+        client_information[edit_info] = gets.chomp
+    elsif "number of children"
+        puts "Please enter the correct information:"
+        client_information[edit_info] = gets.chomp
+    else "decor theme"
+        puts "Please enter the correct information:"
+        client_information[edit_info] = gets.chomp
+    end 
+
+puts " "
+puts "Thank you."
+puts " "
+
+client_information
