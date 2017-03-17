@@ -2,7 +2,8 @@
 # Enter the name of the document at the top
 # Ask the user to input informatiom
 # Create an empty hash
-# Prompt and allow an interior designer to enter the details of a given client: the client's name, age, number of children, decor theme
+# Prompt and allow an interior designer to enter the details of a given client: the client's 
+# name, age, number of children, decor theme
 # save each detail into created hash
 # Convert any user input to the appropriate data type.
 # Print the hash back out to the screen when the designer has answered all of the questions.
