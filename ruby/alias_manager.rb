@@ -73,7 +73,7 @@ def consonant_shift(str)
 end
 
 # Store methods in variables
-# Combine at end of UI
+# Combine at end of program
 
 
 new_first = consonant_shift(vowel_shift(first_name)).capitalize
