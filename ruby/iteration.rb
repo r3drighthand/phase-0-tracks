@@ -143,12 +143,23 @@ p filter(hogwarts)
 
 # DROP_WHILE METHOD
 
-def drop_method(x)
-  x.drop_while {|house, animal| animal < 4}
-end
+colors = {
+    red: 1,
+    orange: 2,
+    yellow: 3,
+    green: 4, 
+    blue: 5,
+    indigo: 6,
+    violet: 7
+}
 
-p hogwarts
-p drop_method(hogwarts)
+# Method works on hash if iterating over integers, not strings.
+def drop_method(x)
+	x.drop_while {|color, number| number < 5}
+end 
+
+p drop_method(colors)
+
 
 
 
