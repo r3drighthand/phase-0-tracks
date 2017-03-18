@@ -86,7 +86,7 @@ def vowel_shift(str)
 end
 
 def consonant_shift(str)
-  consonants = ["b", "c", "d", "e", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+  consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
   str = str.split('')
   str_new = str.map do |char|
     if consonants.include?(char)
