@@ -94,7 +94,7 @@ p satisfies(dogs)
 animals = ["wolf", "raven", "lion", "otter", "elephant", "hedgehog"]
 
 def drop(x)
-  x.drop_while {|x| x.length < 5 }
+	x.drop_while {|x| x.length < 5 }
 end
 
 p animals
@@ -103,79 +103,52 @@ p drop(animals)
 
 # RELEASE 2: HASH
 
-emotion = {
-  "emotion_1" => 'angry', 
-  "emotion_2" => 'sad', 
-  "emotion_3" => 'happy', 
-  "emotion_4" => 'estatic', 
-  "emotion_5" => 'livid'
-  
+hogwarts = {
+  gryffindor: "lion",
+  ravenclaw: "eagle",
+  hufflepuff: "badger",
+  slytherin: "snake"
 }
 
-#emotion.delete_if {|key, value| value.length <= 4 }   
+# DELETE_IF METHOD
 
-def letters(x)
-  x.delete_if {|key, value| value.length <= 4 } 
+# hogwarts.delete_if {|key, value| value.length <= 4 }   
+
+def letter_length(x)
+	x.delete_if {|house, animal| animal.length <= 4 } 
 end
 
-p letters(emotion) 
+p hogwarts
+p letter_length(hogwarts) 
 
+# KEEP_IF METHOD
 
-# method to see if it contains certain specified letters
-
-def contain(x)
-x.keep_if {|key, value| value =~ /[pe]/ }
+# Method to check whether hash contains certain specified letters
+def contains(x)
+	x.keep_if {|house, animal| animal =~ /[g]/ }
 end
 
-p contain(emotion)
+p hogwarts
+p contains(hogwarts)
 
-# method sees what filter satisfies the condition of the data structure
+# REJECT METHOD
 
+# Method checks what filter satisfies the condition of the data structure
 def filter(x)
-x.reject {|emotion, value| value.length <= 4}
+	x.reject {|house, animal| animal.length <= 4}
 end
 
-filter(emotion)
+p hogwarts
+p filter(hogwarts)
 
-p filter(emotion)
+# DROP_WHILE METHOD
 
-numbers = {
-  "Bob" => 1,
-  "Suzie" => 2,
-  "Sally" => 3,
-  "Rob" => 4,
-  "Dod" => 5,
-  "Tom" => 6
-}
-
-def num(x)
-  x.drop_while {|numbers, quantity| quantity < 4}
+def drop_method(x)
+  x.drop_while {|house, animal| animal < 4}
 end
 
-p num(numbers)
-numbers.drop_while {|numbers, quantity| quantity < 4}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# RELEASE 2: HASH
-
-
-
+p hogwarts
+p drop_method(hogwarts)
 
 
 
