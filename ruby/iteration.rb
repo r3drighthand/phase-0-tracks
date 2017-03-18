@@ -80,22 +80,28 @@ p dogs
 
 p contains(dogs)
 
-# method sees what filter satisfies the condition of the data structure
+# FIRST METHOD
+
+# Method checks which filter satisfies the condition of the data structure
 def satisfies(x)
   x.first(2)
 end
 
-p satisfies(sports)
+p satisfies(dogs)
 
- numbers = [1,2,10,15,25,66]
+# DROP_WHILE METHOD
+
+animals = ["wolf", "raven", "lion", "otter", "elephant", "hedgehog"]
 
 def drop(x)
-  x.drop_while {|x| x < 15 }
+  x.drop_while {|x| x.length < 5 }
 end
 
-p drop(numbers)
+p animals
 
-# Hash
+p drop(animals)
+
+# RELEASE 2: HASH
 
 emotion = {
   "emotion_1" => 'angry', 
