@@ -1,5 +1,5 @@
 
-bio_array = {
+bio_hash = {
   circulatory: {
     heart: {
       chambers: [
@@ -83,4 +83,9 @@ bio_array = {
       ]
   }
 }
-  
+ 
+bio_hash[:nervous]
+bio_hash[:circulatory][:heart][:chambers][1]  
+bio_hash[:skeletal][:bone_list][3]
+bio_hash[:respiratory][:larynx]
+bio_hash[:digestive][:intestines][-2] 
