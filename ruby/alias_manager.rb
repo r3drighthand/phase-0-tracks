@@ -23,8 +23,7 @@ When will it be helpful to convert the string to an array to work with it more e
 		and capitalize at end, before printing/storing.
 		otherwise, could write separate method for dealing with capitalized chars.
 	How will you handle edge cases?
-		would rotate work on edge cases? it seems to works on vowels without
-		reassigning values (if 'z', 'z' == 'a')
+		Rotate will move last item in array to index zero, so 'z' will rotate to 'a'.
 =end 
 
 
@@ -59,7 +58,7 @@ def vowel_shift(str)
 end
 
 def consonant_shift(str)
-  consonants = ["b", "c", "d", "e", "f", "g", "h", "j", "k", "l", "m", "n", 
+  consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", 
   	"p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
   str = str.split('')
   str_new = str.map do |char|
