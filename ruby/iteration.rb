@@ -42,9 +42,7 @@ end
 
 p sbux_coffee
 
-
-
-# RELEASE 1: HASH
+# RELEASE 1: HASH.EACH
 
 sharks = {
 	shark1: "great white",
@@ -55,3 +53,19 @@ sharks = {
 	shark6: "dogfish",
 	shark7: "megalodon"
 }
+
+p sharks 
+
+sharks.each do |shark_num, species|
+	puts "#{shark_num} is the #{species.capitalize}"
+end 
+
+p sharks
+
+# RELEASE 2:
+
+
+
+
+
+
