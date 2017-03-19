@@ -42,21 +42,6 @@ Method call 'fib(10)' should return 55; '8' returns 21; '12' should return 144.
 # Close method 
 # Test by calling method with argument
 
-
-def fib(num)
-  if (0..1).include? num
-    return num
-  else 
-    return (fib(num-1) + fib(num-2))
-  end
-end
-
-p fib(10)
-p fib(20)
-p fib(100)
-
-# Realized instructions called for an index return, not a value.
-
 def fib(n)
     arr = [0, 1]
     fibonacci = ->(arr) {
