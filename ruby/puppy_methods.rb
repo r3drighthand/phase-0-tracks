@@ -29,6 +29,15 @@ class Puppy
 		puts "Grrr!"
 	end
 
+	# boolean method
+	def boolean(x)
+		if x % 2 == 0
+			puts "I am hungry!"
+		else 
+			puts "I am sleepy..."
+		end 
+	end 
+
 end
 
 
@@ -42,3 +51,5 @@ ruthie.speak(5)
 ruthie.roll_over
 ruthie.dog_years(12)
 ruthie.attack
+ruthie.boolean(1)
+ruthie.boolean(2)
