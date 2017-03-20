@@ -15,4 +15,4 @@ end
 
 # initialize instance of Puppy
 ruthie = Puppy.new
-ruthie.fetch(ball)
+ruthie.fetch("ball")
