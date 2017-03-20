@@ -1,3 +1,5 @@
+# PUPPY METHODS
+
 class Puppy
 
   def fetch(toy)
