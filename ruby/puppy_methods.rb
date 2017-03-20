@@ -9,3 +9,10 @@ class Puppy
 
 end
 
+
+
+# DRIVER CODE
+
+# initialize instance of Puppy
+ruthie = Puppy.new
+ruthie.fetch(ball)
