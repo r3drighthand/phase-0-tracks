@@ -3,19 +3,27 @@
 class Santa
 
 
+	# Santa needs state:
+	# gender = string
+	# ethnicity = string
+	# reindeer_ranking = array (not initialized)
+	# age = defaults to 0
 
-	def initialize
+	def initialize(gender, ethnicity)
 		puts "Initializing Santa sequence..."
-		#attr gender = string
-		#attr ethnicity = string
+		@gender = gender
+		@ethnicity = ethnicity
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", 
+			"Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
 	end
 
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"
-	end
+	end 
 
-	def eat_milk_and_cookies(cookie)
-		puts "That was a good #{cookie}!"
+	def eat_cookies(cookie)
+		puts "That was a good #{cookie} cookie!"
 	end 
 
 end
@@ -23,4 +31,4 @@ end
 # DRIVER CODE
 santa = Santa.new
 santa.speak
-santa.eat_milk_and_cookies("liver cookie")
+santa.eat_milk_and_cookies("cononut")
