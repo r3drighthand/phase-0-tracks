@@ -45,16 +45,52 @@ class Puppy
 
 end
 
+# DRIVER CODE
 
+# ruthie = Puppy.new
+# ruthie.fetch("ball")
+#ruthie.speak(5)
+# ruthie.roll_over
+# ruthie.dog_years(12)
+# ruthie.attack
+# ruthie.boolean(1)
+# ruthie.boolean(2)
+
+
+class Spider
+
+	def initialize
+		puts "Initialized new spider!"
+	end 
+
+	def species(varies)
+    	puts "This spider is a(n) #{varies}."
+    	return varies
+ 	end
+
+	def jump(height, distance)
+    	puts attack_range = height * distance
+    	return attack_range
+	end
+
+	def bite(severity)
+    	if severity == "mild"
+    		puts "Walk it off!"
+    	elsif severity == "bad"
+    		puts "Get to a doctor!"
+    	elsif severity == "nightmare"
+    		puts "Call the coroner..."
+    	else
+    		puts "Maybe it was a scorpion?"
+    	end
+    return severity
+  end
+
+end 
 
 # DRIVER CODE
 
-# initialize instance of Puppy
-ruthie = Puppy.new
-ruthie.fetch("ball")
-ruthie.speak(5)
-ruthie.roll_over
-ruthie.dog_years(12)
-ruthie.attack
-ruthie.boolean(1)
-ruthie.boolean(2)
+caitlin = Spider.new
+caitlin.species("orb weaver")
+caitlin.jump(5, 10)
+caitlin.bite("bad")
