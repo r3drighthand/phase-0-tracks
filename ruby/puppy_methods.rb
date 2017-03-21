@@ -90,7 +90,26 @@ end
 
 # DRIVER CODE
 
-caitlin = Spider.new
-caitlin.species("orb weaver")
-caitlin.jump(5, 10)
-caitlin.bite("bad")
+# caitlin = Spider.new
+# caitlin.species("orb weaver")
+# caitlin.jump(5, 10)
+# caitlin.bite("bad")
+
+spider_records = []
+spider_count = 0
+while spider_count < 50
+	spider_records << "spider#{spider_count}"
+	spider = Spider.new
+	spider_count += 1
+end 
+
+p spider_records
+
+spider_files = []
+spider_records.each do |spider_number|
+  spider_files << spider.species("orb weaver")
+  spider_files << spider.jump(5, 10)
+  spider_files << spider.bite("bad")
+end
+
+p spider_files
