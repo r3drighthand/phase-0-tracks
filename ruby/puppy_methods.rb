@@ -97,7 +97,7 @@ end
 
 spider_records = []
 spider_count = 0
-while spider_count < 50
+while spider_count < 51
 	spider_records << "spider#{spider_count}"
 	spider = Spider.new
 	spider_count += 1
