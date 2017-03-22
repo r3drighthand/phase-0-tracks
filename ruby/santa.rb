@@ -54,24 +54,23 @@ ethnicity = ["Chinese", "Pacific Islander", "Welsh", "French", "Russian", "Egypt
 
 50.times do |i|
 	santarray << Santa.new(gender[i], ethnicity[i])
+	puts "There are now #{santarray.length} Santas in the array!"
 end
 
 # Making sure 50 santas were added to array
 # p santarray.length
 
-p santarray
+puts santarray
 
 
 
-santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", 
-	"gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", 
-	"prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-
-example_genders.length.times do |i|
-	santas << Santa.new(example_genders[i], example_ethnicities[i])
-	puts "There are now #{santas.length} Santas in the array!"
-end
-
-p santas
+# santas = []
+# example_genders = ["agender", "female", "bigender", "male", "female", 
+#	"gender fluid", "N/A"]
+# example_ethnicities = ["black", "Latino", "white", "Japanese-African", 
+#	"prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+# example_genders.length.times do |i|
+#	santas << Santa.new(example_genders[i], example_ethnicities[i])
+#	puts "There are now #{santas.length} Santas in the array!"
+# end
+# p santas
