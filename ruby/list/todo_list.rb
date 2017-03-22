@@ -11,11 +11,11 @@ class TodoList
         @list_items << new_item
     end 
 
-    # def delete_item(removed_item)
-    #    @list_items.delete(removed_item)
-    # end
+    def delete_item(removed_item)
+        @list_items.delete(removed_item)
+    end
 
-    # def get_item(index)
-    #    @list_items[index]
-    # end 
+    def get_item(index)
+        @list_items[index]
+    end 
 end
