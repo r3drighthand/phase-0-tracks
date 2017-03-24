@@ -1,107 +1,70 @@
-# Pseudocode:
-
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
-  # string.split(" ") convert to array
-  # use .each to iterate over array values
-  # set up an empty hash = {}
-  # hash << 
-  # example input (hash): carrots: 2, apples: 4, cereal: 8, pizza: 3
+  # Turn string into array
+  # Iterate through the array to create a hash
+  # set default quantity to 1
+  # print the list to the console [p, print, puts]
+# output: hash with key/value pair pf carrots(.etc)/
 
-  # set default quantity: 0
-  # print the list to the console [can you use one of your other methods here?]
-# output: [hash]
-
-# ==============================
-
-def create_list(grocery_str)
-	grocery_list = grocery_str.split # ["carrots", "apples", "cereal", "pizza"]
-    grocery_hash = {}
-    grocery_list.each do |food_items|
-      grocery_hash[food_items] = 0
-    end 
-    grocery_hash
-end 
-
-puts create_list("carrots apples cereal pizza")
-    our_list = create_list("carrots apples cereal pizza")
-    
-def grocery_item_adder(grocery_list, item, qty)
-    grocery_list[item] = qty
-    grocery_list
+def create_list(grocery_items)
+	list = {}
+	grocery_items.split.each do |item|
+		list[item] = 1
+	end
+	p list
 end
-
-grocery_item_adder(our_list, "cookies", 3)
-grocery_item_adder(our_list, "lemonade", 2)
-grocery_item_adder(our_list, "tomatoes", 3)
-grocery_item_adder(our_list, "onions", 1)
-grocery_item_adder(our_list, "ice cream", 2)
-
-
-
-# DRIVER CODE FOR DELETE 
-def grocery_item_deleter(grocery_list, item, qty)
-  grocery_list.delete(item)
-  grocery_list.delete(qty)
-  grocery_list
-end
-
-grocery_item_deleter(our_list, "lemonade", 2)
-
-# DRIVER CODE FOR CHANGING VALUE IN HASH
-def current_list(grocery_list, item, qty)
-  grocery_list[item] = qty
-  grocery_list
-end
-
-current_list(our_list, "ice cream", 1)
-
-
 
 # Method to add an item to a list
 # input: list, item name, and optional quantity
-# steps: takes item name & optional quantity and adds them to existing hash
-# hash[key] = value
-# output: hash {"carrots" => 1}
+# steps: add item with quantity to hash (ex: hash[item name] = optional quantity)
+# output: hash with item added
+
+def add_item(list, item, quantity=1)
+	list[item] = quantity
+end
 
 # Method to remove an item from the list
-
-# Write grocery_delete method
 # input: list, item name
-# steps: delete "lemonade" and hash value
-# output: updated list store and return with correct keys/values.
+# steps: remove key from hash
+# output: the hash no longer has the item
+
+def remove_item(list, item)
+	list.delete(item)
+end 
 
 # Method to update the quantity of an item
-# input:
-# steps:
-# output:
+# input: list, item, quantity
+# steps: update quantity
+# output: the hash has updated quantity
+
+def update_quantity(list, item, quantity)
+	list[item] = quantity
+end
 
 # Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+# input: list
+# steps: iterate through list and present the list in an easy to read manner
+# output: an easy to read list
 
-=begin 
+def print_pretty_list(list)
+	list.each do |item, quantity|
+		puts "#{item} - #{quantity}"
+	end
+end
 
-1. What did you learn about pseudocode from working on this challenge?
-- Pseudocoding is helpful because it allows you to "map" out your problem solving process. You can then follow your own instructions as you build the program. Pseudocoding helps simplify challenges that appear complex by identifying and separating each problem into smaller problems. It's a useful way to organize and plan. Using plain English to pseudocode improves comprehension because there's nothing to "translate."
+# DRIVER CODE
 
-2. What are the tradeoffs of using arrays and hashes for this challenge?
-- In this case, hashes make more sense than arrays because we needed a key/value pair for the grocery item/quantity, and hashes are structured for that kind of data. Arrays are suited to storing sequential data, while hashes are suited for storing relational data. If we used an array, we'd have to use more than one, and adding to the array, removing objects, and changing data would have been more difficult. We'd have to use indices to add/remove/change data and it just doesn't make a lot of sense to do that when hashes were designed for these kinds of programming needs. 
+grocery_list = create_list("carrots apples cereal pizza")
+# p grocery_list
+add_item(grocery_list, "ice cream", 7)
+p grocery_list
 
-3. What does a method return?
-- A method returns the last data point in a function body.
+remove_item(grocery_list, "ice cream")
 
-4. What kind of things can you pass into methods as arguments?
-- Any object can pass as an argument: integers, strings, booleans, and even other methods.
+p grocery_list
 
-5. How can you pass information between methods?
-- You can "hand off" information between methods using variables, storing function output in variables and then using those variables as input in another function. 
+update_quantity(grocery_list, "pizza", 5)
+p grocery_list
 
-6. What concepts were solidified in this challenge, and what concepts are still confusing?
-- The process of passing data between methods is clear now. Also, I used to struggle with understanding exactly what a block parameter is used for, but after my GPS guide explained it I understand it better.
-- I still need to work on writing pseudocode properly because I like mixing pseudo with code examples and it gets confusing the longer I work on a challange.
-
-
-=end 
+print_pretty_list(grocery_list)
