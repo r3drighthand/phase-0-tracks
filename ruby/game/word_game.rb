@@ -66,7 +66,7 @@
 
 class WordGame
 
-	attr_reader :guesses_left, :is_over
+	attr_reader # :guesses_left, :is_over
 
 	def initialize(word)
 		@word = word 
@@ -74,19 +74,20 @@ class WordGame
 		@guesses_left = # ?
 		@is_over = false
 		@word_array = @word.split('')
-		p @word_array
+		# @letter_spaces = @word.length 
+
 	end
 
-
-
-	
-
+	def create_spaces
+    	@mystery_word = @word_array.map {|word| '_ '}
+    	p @mystery_word.join
+	end
 
 end 
 
 # DRIVER CODE
 game = WordGame.new("unicorn")
-
+game.create_spaces
 
 # MY PSEUDO
 
