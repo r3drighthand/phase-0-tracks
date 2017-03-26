@@ -70,17 +70,18 @@ class WordGame
 
 	def initialize(word)
 		@word = word 
+		@word_array = @word.split('')
 		@letter_bank = []
 		@guesses_left = # ?
 		@is_over = false
-		@word_array = @word.split('')
+		
 		# @letter_spaces = @word.length 
 
 	end
 
 	def create_spaces
-    	@mystery_word = @word_array.map {|word| '_ '}
-    	p @mystery_word.join
+    	@mystery_word = @word_array.map {|letter| '_ '}
+    	p @mystery_word.join # <= remove p
 	end
 
 end 
@@ -268,7 +269,25 @@ game.create_spaces
 # game.letter_bank(@letter)
 # p @letters_guessed
 
+# def start_game 
+#     until @guess_limit == @guess_count 
+#       @guess_count =+ 1
+#     if @solution.include?(@letter)
+#       puts "good!"
+#     else 
+#       puts "bad..."
+#     end 
 
+#   def game_over
+#     p @letter_spaces
+#     if !@letter_spaces.include?('_ ')
+#       @game_over = true
+#       p @game_over
+#     else
+#       @game_over = false
+#       p @game_over
+#     end
+#   end 
 
 
 

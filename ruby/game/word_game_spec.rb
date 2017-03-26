@@ -1,15 +1,9 @@
 require_relative 'word_game'
 
 describe WordGame do
-	let(:wordgame) {WordGame.new("---")}
+	let(:game) {WordGame.new("unicorn")}
 
-	it "test description" do
-		expect(_). to eq "---"
+	it "turns letters into spaces" do
+		expect(game.create_spaces). to eq "_ _ _ _ _ _ _ "
 	end 
-
-	it "test description" do
-		# genie.grant_wish("pony")
-		# genie.grant_wish("alligator")
-		# expect(genie.favorite_wish).to eq "alligator"
-	end
-end
+end 
