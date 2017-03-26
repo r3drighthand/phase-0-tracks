@@ -73,12 +73,10 @@ class WordGame
 		@letter_bank = []
 		@guesses_left = # ?
 		@is_over = false
+		@word_array = @word.split('')
+		p @word_array
 	end
 
-	def mystery_word
-		@mystery_word = @word.split('') # <= why?
-		p "#{@mystery_word}"
-	end 
 
 
 	
@@ -88,7 +86,6 @@ end
 
 # DRIVER CODE
 game = WordGame.new("unicorn")
-game.mystery_word
 
 
 # MY PSEUDO
@@ -107,7 +104,7 @@ game.mystery_word
 			# decrease count with each wrong guess
 			# when no guesses are left, the game is over
 		# ELSE
-			# game is ongoing
+			# game keeps going until word is guessed
 
 
 # Create method for matching guessed letters to letters in string array
