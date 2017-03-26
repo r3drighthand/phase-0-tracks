@@ -23,6 +23,8 @@
 
 # PSEUDO
 
+# No interface?
+
 # Make class for word guessing game.
 # Make initialize method. 
 # Write method for user to enter a word.
@@ -33,29 +35,71 @@
 # Take a word and turn it into dashes
 # How? An array?
 
+####################################
+
+# SAMPLE PSEUDO
+
+# Store phrase in a string
+# Make array of guessed letters
+# Calculate max size for number of wrong guesses
+# 	- find all unique letters in phrase
+# 	- 1 wrong guess for every 5 unique letters (using base 5 to calculate)
+# define make hint string
+# 	- for each character in the phrase, 
+# 		- if it's not a letter, print it
+# 		- if it's in the guessed letter array, print letter
+# 		- otherwise print _
+# 		- unless it's the last letter in the phrase, print a space after the letter " "
+# define method for checking if letter is a new guess
+# 	- check if it's a valid letter
+# 	- compare letter to guessed letters array
+# define method for adding a new guess
+# 	- add letter to guessed letters array
+# define method to check win/loss
+# 	- if hint string contains no _ characters, player wins
+# 	- if wrong guesses left is 0, player loses
+
+
+
+####################################
+
 
 class WordGame
 
-	attr_reader :guess_count
-	# word_length, guess_count, guess_remaining, game_over, mystery_word, 
-	# letters_guessed, word_array
+	attr_reader :guesses_left, :is_over
 
 	def initialize(word)
 		@word = word 
+		@letter_bank = []
+		@guesses_left = # ?
+		@is_over = false
 	end
 
-	def letters_guessed
-		letter_bank = []
-		letter_bank << letter_guessed 
-		p letter_bank
+	def mystery_word
+		@mystery_word = @word.split('') # <= why?
+		p "#{@mystery_word}"
 	end 
+
+
+	# How to turn string into individual letters?
+	# How to turn letters into underscores or dashes for guessing?
+	# How to display the dashes?
+	# How to continually update "mystery word" each time guess is made?
+	# How to display wrong-guessed letters?
+	# How to display guesses remaining?
+
+	# We don't need an array for correct guesses, just wrong ones.
+	# def letters_guessed
+	# 	@letter_bank << letter_guessed 
+	# 	p @letter_bank
+	# end 
 
 
 end 
 
 # DRIVER CODE
 game = WordGame.new("unicorn")
-
+game.mystery_word
 
 
 
