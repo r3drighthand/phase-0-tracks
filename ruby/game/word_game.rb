@@ -81,7 +81,48 @@ class WordGame
 	end 
 
 
-	# How to turn string into individual letters?
+	
+
+
+end 
+
+# DRIVER CODE
+game = WordGame.new("unicorn")
+game.mystery_word
+
+
+# MY PSEUDO
+
+# Take string (word) and store it
+# Turn string into array
+# Display array as underscores: '_ '
+
+# Calculate number of guesses left based on length of string
+	# Could be total number of letters plus 5
+	# Display guesses remaining
+
+# Create method for keeping track of guesses
+	# WHILE game is not over: 
+		# IF guessed letter does not match string array char
+			# decrease count with each wrong guess
+			# when no guesses are left, the game is over
+		# ELSE
+			# game is ongoing
+
+
+# Create method for matching guessed letters to letters in string array
+	# IF guessed letter matches letter in string array,
+		# replace underscore with letter (display it)
+	# ELSE add guessed letter to wrong guess array
+		# Print letters in array so user can see what's already been guessed
+
+# Wrong guessed letters must be stored in array
+	# Display wrong guesses
+
+
+
+
+# How to turn string into individual letters?
 	# How to turn letters into underscores or dashes for guessing?
 	# How to display the dashes?
 	# How to continually update "mystery word" each time guess is made?
@@ -93,18 +134,6 @@ class WordGame
 	# 	@letter_bank << letter_guessed 
 	# 	p @letter_bank
 	# end 
-
-
-end 
-
-# DRIVER CODE
-game = WordGame.new("unicorn")
-game.mystery_word
-
-
-
-
-
 
 
 
