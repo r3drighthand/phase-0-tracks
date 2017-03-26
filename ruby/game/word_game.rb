@@ -66,29 +66,49 @@
 
 class WordGame
 
-	attr_reader # :guesses_left, :is_over
+	attr_reader :word
+	attr_accessor :solution
+
+	# remember to remove print statements after debugging! 
 
 	def initialize(word)
 		@word = word 
-		@word_array = @word.split('')
 		@letter_bank = []
-		@guesses_left = # ?
+		@solution = ""
 		@is_over = false
-		
-		# @letter_spaces = @word.length 
-
 	end
 
 	def create_spaces
-    	@mystery_word = @word_array.map {|letter| '_ '}
-    	p @mystery_word.join # <= remove p
+		@mystery_word = @word.split('').map {|letter| '_'}
+    	p @mystery_word.join
 	end
 
+	def guess_count
+		p @guesses_left = @word.length + 5
+	end
+
+	def guessed_letters(letter)
+		@letter_bank.push(letter)
+		p @letter_bank.join
+	end 
+
+	
+
 end 
+
+
+
+# write method for matching guessed letters to letters in mystery_word array
+
 
 # DRIVER CODE
 game = WordGame.new("unicorn")
 game.create_spaces
+game.guess_count
+game.guessed_letters("k")
+game.guessed_letters("r")
+
+
 
 # MY PSEUDO
 
