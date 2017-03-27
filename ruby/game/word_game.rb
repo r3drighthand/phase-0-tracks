@@ -49,30 +49,38 @@
 
 class WordGame
 
-	attr_reader :word, #:guess_limit
-	attr_accessor #:solution
+	attr_reader :word, :guess_count
 
 	# remember to remove p statements after debugging! 
 
 	def initialize(word)
 		@word = word 
-		@letter_bank = []
-		@solution = ""
+		@answer = ""
 		@is_over = false
+		@guess_count = 0
 	end
 
 	def create_spaces
-		@mystery_word = @word.split('').map {|letter| '_'}
+		@mystery_word = @word.split("").map {|letter| "_"}
     	p @mystery_word.join
 	end
 
-	def guessed_letters(user_guess)
-		@letter_bank.push(user_guess)
+	def guessed_letters(user_input)
+		@letter_bank = []
+		@letter_bank.push(user_input)
 		p @letter_bank.join
 	end 
 
 	def limit
 		@guess_limit == @word.length + 5
+	end
+
+	def letter_matching
+		#
+	end 
+
+	def guessing_letters(user_input)
+		until @guess_count == 
 	end
 
 end 
