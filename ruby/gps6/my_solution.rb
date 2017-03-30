@@ -59,6 +59,14 @@ class VirusPredictor
     else
       speed += 2.5
     end
+    
+    # case @population_density
+    # when 200..Float::INFINITY then decimal = 0.4
+    #  when 150..200 then decimal = 0.3
+    #  when 100..150 then decimal = 0.2
+    #  when 50..100 then decimal = 0.1
+    #  else decimal = 0.05
+    # end
 
     puts " and will spread across the state in #{speed} months.\n\n"
 
