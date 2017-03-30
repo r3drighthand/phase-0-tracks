@@ -84,6 +84,30 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
+STATE_DATA.each do |state, data|
+  VirusPredictor.new(state, data[:population_density], data[:population]).virus_effects
+end
 
 #=======================================================================
 # Reflection Section
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# The first key uses the rocket operator, while the keys inside the hash values are symbols.
+
+# What does require_relative do? How is it different from require?
+# 'require_relative' allows you to have access to different files within the same directory. 
+# 'relative' grants access to files in other directories, provided you include the relative
+# pathway to where those files are located.
+
+# What are some ways to iterate through a hash?
+# You can iterate through a hash using 'each' provided that you pass two block variables
+# into your parameters, one for the key and one for the value in the hash. You could also 
+# use map.
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# We noticed right away how repetitive the arguments were and that we could delete any 
+# instance variable that's mentioned outside initialization.
+
+# What concept did you most solidify in this challenge?
+# Refactoring was especially helpful because I've been unsure as to when and how to refactor
+# my code. Making sure I don't repeat myself is important and seeing examples of how this is
+# to be avoided has been helpful. 
