@@ -1,0 +1,98 @@
+In the solo_project directory, create a file called queries.txt. For each SQL query you run, paste both the command and the output (if any) into queries.txt.
+
+Run a SQL query for each of the following:
+
+
+1. Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM books;
+1|Zero: Biography of a Dangerous Number|NF|248|true|1
+2|Decoding the Universe|NF|304|true|1
+3|Proofiness: The Dark Arts of Mathematical Deception|NF|304|false|1
+4|The Number Devil: A Mathematical Adventure|F|264|true|2
+5|The Phantom Tollbooth|F|254|true|3
+6|A Mathematician Reads the Newspaper|NF|240|false|4
+7|Innumerancy: Mathematical Illiteracy and its Problems|NF|180|true|4
+8|Does God Play Dice? The New Mathematics of Chaos|NF|416|true|5
+9|The Joy of X|NF|336|true|6
+10|Nonlinear Dynamics in Chaos|NF|528|false|6
+11|Surely You're Joking Mr Feynman!|NF|352|true|7
+12|What Do You Care What Other People Think|NF|256|true|7
+13|The Drunkard's Walk: How Randomness Rules Our Lives|NF|252|false|8
+14|Naked Statistics: Stripping the Dread from the Data|NF|304|true|9
+15|The Signal and the Noise|NF|506|true|10
+16|Antifragile: Things That Gain From Disorder|NF|544|false|11
+17|The Bed of Procrustes: Philosophical and Practical Aphorisms|NF|176|false|11
+18|Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets|NF|368|true|11
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE books SET genre="NF" WHERE title="The Number Devil: A Mathematical Adventure";
+sqlite> SELECT * FROM books WHERE title="The Number Devil: A Mathematical Adventure";
+4|The Number Devil: A Mathematical Adventure|NF|264|true|2
+
+3. Display the information in both tables using one query.
+
+sqlite> SELECT * FROM authors, books WHERE authors.id = books.author_id;
+1|Seife|Charles|1|Zero: Biography of a Dangerous Number|NF|248|true|1
+1|Seife|Charles|2|Decoding the Universe|NF|304|true|1
+1|Seife|Charles|3|Proofiness: The Dark Arts of Mathematical Deception|NF|304|false|1
+2|Enzensberger|Hans|4|The Number Devil: A Mathematical Adventure|NF|264|true|2
+3|Juster|Norton|5|The Phantom Tollbooth|F|254|true|3
+4|Paulos|John|6|A Mathematician Reads the Newspaper|NF|240|false|4
+4|Paulos|John|7|Innumerancy: Mathematical Illiteracy and its Problems|NF|180|true|4
+5|Stewart|Ian|8|Does God Play Dice? The New Mathematics of Chaos|NF|416|true|5
+6|Strogatz|Steven|9|The Joy of X|NF|336|true|6
+6|Strogatz|Steven|10|Nonlinear Dynamics in Chaos|NF|528|false|6
+7|Feynman|Richard|11|Surely You're Joking Mr Feynman!|NF|352|true|7
+7|Feynman|Richard|12|What Do You Care What Other People Think|NF|256|true|7
+8|Mlodinow|Leonard|13|The Drunkard's Walk: How Randomness Rules Our Lives|NF|252|false|8
+9|Wheelan|Charles|14|Naked Statistics: Stripping the Dread from the Data|NF|304|true|9
+10|Silver|Nate|15|The Signal and the Noise|NF|506|true|10
+11|Taleb|Nassim|16|Antifragile: Things That Gain From Disorder|NF|544|false|11
+11|Taleb|Nassim|17|The Bed of Procrustes: Philosophical and Practical Aphorisms|NF|176|false|11
+11|Taleb|Nassim|18|Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets|NF|368|true|11
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT books.title, authors.lastname FROM books JOIN authors ON books.author_id = authors.id;
+Zero: Biography of a Dangerous Number|Seife
+Decoding the Universe|Seife
+Proofiness: The Dark Arts of Mathematical Deception|Seife
+The Number Devil: A Mathematical Adventure|Enzensberger
+The Phantom Tollbooth|Juster
+A Mathematician Reads the Newspaper|Paulos
+Innumerancy: Mathematical Illiteracy and its Problems|Paulos
+Does God Play Dice? The New Mathematics of Chaos|Stewart
+The Joy of X|Strogatz
+Nonlinear Dynamics in Chaos|Strogatz
+Surely You're Joking Mr Feynman!|Feynman
+What Do You Care What Other People Think|Feynman
+The Drunkard's Walk: How Randomness Rules Our Lives|Mlodinow
+Naked Statistics: Stripping the Dread from the Data|Wheelan
+The Signal and the Noise|Silver
+Antifragile: Things That Gain From Disorder|Taleb
+The Bed of Procrustes: Philosophical and Practical Aphorisms|Taleb
+Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets|Taleb
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM books WHERE genre="F";
+sqlite> SELECT * FROM books;
+1|Zero: Biography of a Dangerous Number|NF|248|true|1
+2|Decoding the Universe|NF|304|true|1
+3|Proofiness: The Dark Arts of Mathematical Deception|NF|304|false|1
+4|The Number Devil: A Mathematical Adventure|NF|264|true|2
+6|A Mathematician Reads the Newspaper|NF|240|false|4
+7|Innumerancy: Mathematical Illiteracy and its Problems|NF|180|true|4
+8|Does God Play Dice? The New Mathematics of Chaos|NF|416|true|5
+9|The Joy of X|NF|336|true|6
+10|Nonlinear Dynamics in Chaos|NF|528|false|6
+11|Surely You're Joking Mr Feynman!|NF|352|true|7
+12|What Do You Care What Other People Think|NF|256|true|7
+13|The Drunkard's Walk: How Randomness Rules Our Lives|NF|252|false|8
+14|Naked Statistics: Stripping the Dread from the Data|NF|304|true|9
+15|The Signal and the Noise|NF|506|true|10
+16|Antifragile: Things That Gain From Disorder|NF|544|false|11
+17|The Bed of Procrustes: Philosophical and Practical Aphorisms|NF|176|false|11
+18|Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets|NF|368|true|11
