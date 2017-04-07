@@ -1,6 +1,27 @@
 
-2. There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
-3. How do you view the data of all three tables for just one particular business?
---------
-
 1. You've joined two tables before. How do you join three?
+
+SELECT businesses.name, users.lastname, reviews.stars FROM businesses JOIN reviews ON businesses.id = reviews.business_id JOIN users ON users.id = reviews.user_id;
+Lotus Yoga|Pitt|5
+Grundy Hollow Wedding Chapel|Pitt|5
+Amir's Towing|Pitt|5
+Plumbing by Janet|Kaling|2
+The Beagle Nightclub|Jolie|1
+JoeBob's Sportz Barn|Wonder|3
+Sushi World|George|4
+
+2. There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+SELECT businesses.name, users.lastname, reviews.stars, reviews.comment FROM businesses JOIN reviews ON businesses.id = reviews.business_id JOIN users ON users.id = reviews.user_id;
+Lotus Yoga|Pitt|5|I love women in tight yoga pants!
+Grundy Hollow Wedding Chapel|Pitt|5|I love women in tight yoga pants!
+Amir's Towing|Pitt|5|I love women in tight yoga pants!
+Plumbing by Janet|Kaling|2|Janet was late to fix my toilet by 30 min!!!
+The Beagle Nightclub|Jolie|1|I thought the Beagle was for dogs so I brought my teacup chow chow, but LO AND BEHOLD, it was all women in tight yoga pants.
+JoeBob's Sportz Barn|Wonder|3|The SportzBarn isn't just a clever name... it is literally a barn in the middle of a cornfield.
+Sushi World|George|4|Really good service even though they were super busy on a Saturday night
+
+3. How do you view the data of all three tables for just one particular business?
+
+SELECT businesses.name, users.lastname, reviews.stars, reviews.comment FROM businesses JOIN reviews ON businesses.id = reviews.business_id JOIN users ON users.id = reviews.user_id WHERE businesses.name="Sushi World";
+Sushi World|George|4|Really good service even though they were super busy on a Saturday night
