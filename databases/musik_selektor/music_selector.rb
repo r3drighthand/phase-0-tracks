@@ -32,15 +32,22 @@ calm = [ {"Norwegian Beauty"=>"Evelyn Stein"}, {"Sugarcane"=>"Ana Olgica"},
 	{"Alpine Sketch"=>"Christian Loffler"}, {"Travelling"=>"James Spiteri"}, 
 	{"In The Mist"=>"Harry Rosenpal"}, {"Ascend"=>"Shaun Taylor McManus"} ]
 
+conflicted = [ {"Worried Sky"=>"Jean Petri"}, {"Partly Cloudy"=>"Silver Maple"}, 
+	{"Unstitch"=>"Anna Rose Carter"}, {"Anthem"=>"Dmitry Evgrafov"}, {"Norrsken"=>"Karin Borg"}, 
+	{"Islands"=>"Chad Lawson"}, {"Denouement"=>"Lo Mimieux"}, 
+	{"Nocturnal Waltz"=>"Johannes Bornlof"}, {"Remove the Complexities"=>"Peter Sandberg"}, 
+	{"Ab Ovo"=>"Joep Beving"} ]
 
 
 create_table_cmd  = <<-SQL
 	CREATE TABLE IF NOT EXISTS music(
 		id INTEGER PRIMARY KEY,
-		song VARCHAR(225),
-		composer VARCHAR(225)
+		date VARCHAR(225),
+		mood VARCHAR(225)
 	)
 SQL 
+
+music.execute(create_table_cmd)
 
 # Be able to add song/composer key/value pairs?
 # Ordered according to mood?
