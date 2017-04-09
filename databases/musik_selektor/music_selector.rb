@@ -5,13 +5,21 @@
 # and their respective composers. 
 
 require 'sqlite3'
-db = SQLite3::Database.new("musicology.db")
+db = SQLite3::Database.new("music.db")
 # db.results_as_hash = true
+
+happy = []
+
+sad = []
+
+determined = []
+
+calm = []
 
 
 
 create_table_cmd  = <<-SQL
-	CREATE TABLE IF NOT EXISTS musicology(
+	CREATE TABLE IF NOT EXISTS music(
 		id INTEGER PRIMARY KEY,
 		song VARCHAR(225),
 		composer VARCHAR(225)
