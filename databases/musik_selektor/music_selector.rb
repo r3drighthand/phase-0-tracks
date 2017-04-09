@@ -47,10 +47,24 @@ create_table_cmd  = <<-SQL
 	)
 SQL 
 
-music.execute(create_table_cmd)
+db.execute(create_table_cmd)
 
 # Be able to add song/composer key/value pairs?
 # Ordered according to mood?
 # Alternatively, use arrays/hashes outside of db; use db 
 # to log user's mood, data of entry, and weather conditions.
 # Could use .sample for external array... what is hash equivalent?
+
+def store_data(music, date, mood)
+	db.execute("INSERT INTO music (date, mood) VALUES (?, ?)", ('#{date}', '#{mood}');")
+end 
+
+
+
+
+
+# explore ORM by retrieving data
+# kittens = db.execute("SELECT * FROM kittens")
+# kittens.each do |kitten|
+#  puts "#{kitten['name']} is #{kitten['age']}"
+# end
