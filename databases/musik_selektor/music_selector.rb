@@ -47,7 +47,7 @@ create_table_cmd  = <<-SQL
 	)
 SQL 
 
-db.execute(create_table_cmd)
+# db.execute(create_table_cmd)
 
 # Be able to add song/composer key/value pairs?
 # Ordered according to mood?
@@ -59,12 +59,47 @@ def store_data(music, date, mood)
 	db.execute("INSERT INTO music (date, mood) VALUES (?, ?)", ('#{date}', '#{mood}');")
 end 
 
+puts "Enter today's date (mm/dd/yy):"
+date = gets.chomp
+
+puts "How do you feel? We'll match your mood with music!" 
+puts "Please type one of the following: 'happy', 'sad', 'determined', 'calm', or 'conflicted'."
+mood = gets.chomp
+
+if mood == "happy"
+	p happy.sample
+elsif mood == "sad"
+	p sad.sample
+elsif mood == "determined"
+	p determined.sample
+elsif mood == "calm"
+	p calm.sample
+elsif mood == "conflicted"
+	p conflicted.sample
+else 
+	puts "Please select one of the five listed moods... they're the only categories available."
+end
+
+store_data(music, data, mood)
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+=begin 
 # explore ORM by retrieving data
 # kittens = db.execute("SELECT * FROM kittens")
 # kittens.each do |kitten|
-#  puts "#{kitten['name']} is #{kitten['age']}"
+# puts "#{kitten['name']} is #{kitten['age']}"
 # end
+=end 
