@@ -59,9 +59,7 @@ conflicted = [ {"Worried Sky"=>"Jean Petri"}, {"Partly Cloudy"=>"Silver Maple"},
 # to log user's mood, data of entry, and weather conditions.
 # Could use .sample for external array... what is hash equivalent?
 
-def store_data(music, name, age, mood)
- 	db.execute("INSERT INTO music (name, age, mood) VALUES (?, ?, ?)", [name, age, mood])
-end 
+ 
 
 puts "What is your name?"
 name = gets.chomp
@@ -87,9 +85,11 @@ else
 	puts "Please select one of the five listed moods... they're the only categories available."
 end
 
+def store_data(music, name, age, mood)
+ 	db.execute("INSERT INTO db (name, age, mood) VALUES (?, ?, ?)", [name, age, mood])
+end
+
 # store_data(music, name, age, mood)
-
-
 
 
 # explore ORM by retrieving data
