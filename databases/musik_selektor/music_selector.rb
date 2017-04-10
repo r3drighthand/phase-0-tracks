@@ -13,7 +13,8 @@ create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS kittens(
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
-    age INT
+    age INT,
+    mood VARCHAR(225)
   )
 SQL
 
@@ -58,9 +59,9 @@ db.execute(create_table_cmd)
 # to log user's mood, data of entry, and weather conditions.
 # Could use .sample for external array... what is hash equivalent?
 
-# def store_data(music, date, mood)
-# 	db.execute("INSERT INTO music (date, mood) VALUES (?, ?)", ('#{date}', '#{mood}');")
-# end 
+def store_data(music, name, age, mood)
+ 	db.execute("INSERT INTO music (name, age, mood) VALUES (?, ?, ?)", [name, age, mood])
+end 
 
 # puts "What is your name?"
 # name = gets.chomp
