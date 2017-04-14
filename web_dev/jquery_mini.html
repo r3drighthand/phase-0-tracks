@@ -5,11 +5,14 @@
 <head>
 
 	<title>The Phantom Tollbooth</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript"></script>
 
 </head>
 
 <body>
 
+<div id='chars'>
 	<h2>Characters:</h2>
 	<p>Primary</p>
 	<ul>
@@ -38,8 +41,9 @@
 		<li>Doctor Kakofonous A. Dischord</li>
 		<li>The Awful DYNNE</li>
 	</ul>
+</div>
 
-
+<div id='quotes'>
 	<h2>Quotes</h2>
 	<ul>
 		<li>"So many things are possible just as long as you don't know they're impossible."</li>
@@ -49,6 +53,15 @@
 		<li>Why not? That's a good reason for almost anything - a bit used perhaps, but still quite serviceable.</li>
 		<li>"If you want sense, you'll have to make it yourself."</li>
 	</ul>
+</div>
+
+	<script>
+		$(document).ready(function() {
+			$("#chars").css({color: 'blue', fontWeight: 'bold'});
+			$("#quotes").css({color: 'green', fontWeight: 'bold'});
+		}
+
+	</script>
 
 </body>
 
