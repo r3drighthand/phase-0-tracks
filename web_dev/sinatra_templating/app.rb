@@ -24,4 +24,14 @@ post '/students' do
   redirect '/'
 end
 
+get '/students/campus' do
+  @campus = params[:campus]
+  @campus_students = db.execute("SELECT * FROM students WHERE campus=?",[params[:campus]])
+  erb :campus
+end
+
 # add static resources
+post '/campus' do
+  cam.execute("INSERT INTO campus (location) VALUES (?)", [params['location']])
+  redirect '/'
+end
